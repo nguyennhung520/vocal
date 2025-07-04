@@ -1,0 +1,21 @@
+from extensions import db
+
+class Vocal(db.Model):
+   id = db.Column(db.Integer, primary_key=True)
+   example = db.Column(db.String(200), nullable=False)
+   pinyin = db.Column(db.String(100), nullable=False)
+   mean = db.Column(db.String(200), nullable=False)
+   new = db.Column(db.String(200), default=False) 
+   note = db.Column(db.String(200), nullable=True)
+   created_at = db.Column(db.DateTime, server_default=db.func.now())
+   rv = db.Column(db.String(200), nullable=True)
+   rv1 = db.Column(db.String(200), nullable=True)
+   rv2 = db.Column(db.String(200), nullable=True)
+   rv3 = db.Column(db.String(200), nullable=True)
+   rv4 = db.Column(db.String(200), nullable=True)
+   rv5 = db.Column(db.String(200), nullable=True)
+   rv6 = db.Column(db.String(200), nullable=True)
+   rv7 = db.Column(db.String(200), nullable=True)
+   rv8 = db.Column(db.String(200), nullable=True)
+   rv9 = db.Column(db.String(200), nullable=True)
+   rv10 = db.Column(db.String(200), nullable=True)

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiếng Trung - Từ vựng</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+   <h1>📚 Danh sách Từ vựng Tiếng Trung</h1>
+
+   <table>
+       <thead>
+           <tr>
+               <th>Ý nghĩa</th>
+               <th>Ví dụ</th>
+               <th>Phiên âm</th>
+               <th>Mới?</th>
+           </tr>
+       </thead>
+       <tbody>
+           {% for word in words %}
+               <tr>
+                   <td>{{ word.mean }}</td>
+                   <td>{{ word.example }}</td>
+                   <td>{{ word.pinyin }}</td>
+                   <td>{{ word.new }}</td>
+               </tr>
+           {% endfor %}
+       </tbody>
+   </table>
+
+   <form method="POST" action="/add">
+       <label>Ví dụ:</label>
+       <input type="text" name="example" placeholder="input example..." required>
+
+       <label>Phiên âm:</label>
+       <input type="text" name="pinyin" placeholder="input pinyin..." required>
+
+       <label>Ý nghĩa:</label>
+       <input type="text" name="mean" placeholder="input mean..." required>
+
+       <label>Mới?:</label>
+       <input type="text" name="new" placeholder="input new..." required>
+
+       <label>Ghi chú (tùy chọn):</label>
+       <input type="text" name="note" placeholder="input note...">
+
+       <button type="submit">➕ Thêm từ mới</button>
+   </form>
+
+</body>
+</html>
